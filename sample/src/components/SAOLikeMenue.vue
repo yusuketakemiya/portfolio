@@ -1,7 +1,6 @@
 <template>
   <div class="SAOLikeMenue">
-    <h1>{{ message }}</h1>
-    <h2>よばれた</h2>
+    <img :src="menueitem.image" />
   </div>
 </template>
 
@@ -9,11 +8,17 @@
 export default {
   data () {
     return {
-      message: 'よばれました'
     }
+  },
+  props: {
+    menueitem: {}
   }
 }
 </script>
 
 <style scoped>
+img {
+  width: 5%;
+  height: 5%;
+}
 </style>

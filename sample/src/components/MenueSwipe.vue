@@ -5,16 +5,20 @@
         v-bind:swipe-options="{ direction: 'down', threshold: 1 }"
         >
     </vue-touch>
-    <transition-group tag="ul" class="wrapper" >
-      <li v-for="(post, index) in menueitems" :key="post.id"
-          v-bind:class="'item-' + index">
-        <sao-menue />
-      </li>
+    <transition-group name="mainmenue" tag="ul" class="wrapper" appear
+        @before-enter="beforeEnter"
+        @after-enter="afterEnter"
+        @enter-cancelled="afterEnter">
+        <sao-menue class="item" v-for="(item, idx) in menueitems" :data-index="idx"
+          :key="item.id"
+          :menueitem="item" />
     </transition-group>
   </div>
 </template>
 
 <script>
+import store from '../store'
+
 export default {
   name: 'MenueSwipe',
   data () {
@@ -27,12 +31,16 @@ export default {
     onSwipeDown: function () {
       this.isActive = !this.isActive
       if (this.isActive) {
-        for (var i = 0; i < 3; i++) {
-          this.menueitems.push({id: i})
-        }
+        this.menueitems = store.state.main_menue.items
         return
       }
       this.menueitems = []
+    },
+    beforeEnter (el) {
+      el.style.transitionDelay = 100 * el.dataset.index + 'ms'
+    },
+    afterEnter (el) {
+      el.style.transitionDelay = ''
     }
   }
 }
@@ -41,31 +49,22 @@ export default {
 <style scoped>
 @import "./style/swipe.css";
 @import "./style/animate.css";
-li {
-  list-style: none;
-  align-self: auto;
-}
 </style>
 <style lang="scss">
-@for $i from 0 through 2 {
-  $enter-delay: 100ms;
-  .v-enter-active {
-      opacity: 0;
-      animation: fade-in 1s;
-      &.item-#{$i} {
-          animation-delay: #{300ms * $i + $enter-delay};
-      }
-  }
+.mainmenue-enter-active, .mainmenue-leave-active {
+  transition: transform .5s, opacity .5s;
 }
-
-@keyframes fade-in {
-  0% {
-      opacity: 0;
-      transform: translateY(-15px);
-  }
-  100% {
-      opacity: 1;
-      transform: translateY(0);
-  }
+.mainmenue-move:not(.mainmenue-leave-active) {
+  transition: transform .5s;
+}
+/* 表示される時は上からスライド */
+.mainmenue-enter {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+/* 消える時は縮小される */
+.mainmenue-leave-to {
+  opacity: 0;
+  transform: scale(0.8);
 }
 </style>
