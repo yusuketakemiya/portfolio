@@ -12,6 +12,7 @@
         <sao-menue class="item" v-for="(item, idx) in menueitems" :data-index="idx"
           :key="item.id"
           :menueitem="item" />
+
     </transition-group>
   </div>
 </template>
