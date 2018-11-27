@@ -1,10 +1,5 @@
 <template>
   <div class="menueswipe">
-    <vue-touch id="touch_area"
-        v-on:swipedown="onSwipeDown"
-        v-bind:swipe-options="{ direction: 'down', threshold: 1 }"
-        >
-    </vue-touch>
     <transition-group name="mainmenue" tag="ul" class="wrapper" appear
         @before-enter="beforeEnter"
         @after-enter="afterEnter"
@@ -12,8 +7,15 @@
         <sao-menue class="item" v-for="(item, idx) in menueitems" :data-index="idx"
           :key="item.id"
           :menueitem="item" />
-
     </transition-group>
+    <transition name="itempanel" tag="ul" class="wrapper" appear>
+      <skill-panel v-if="isSkillView" />
+    </transition>
+    <vue-touch id="touch_area"
+        v-on:swipedown="onSwipeDown"
+        v-bind:swipe-options="{ direction: 'down', threshold: 1 }"
+        >
+    </vue-touch>
   </div>
 </template>
 
@@ -43,6 +45,9 @@ export default {
     afterEnter (el) {
       el.style.transitionDelay = ''
     }
+  },
+  computed: {
+    isSkillView: function () { return store.state.openMenueItem.id === 1 }
   }
 }
 </script>
@@ -52,6 +57,12 @@ export default {
 @import "./style/animate.css";
 </style>
 <style lang="scss">
+.menueswipe {
+  text-align: left;
+}
+.wrapper {
+  display: inline-block;
+}
 .mainmenue-enter-active, .mainmenue-leave-active {
   transition: transform .5s, opacity .5s;
 }
@@ -67,5 +78,16 @@ export default {
 .mainmenue-leave-to {
   opacity: 0;
   transform: scale(0.8);
+}
+/* enter、 leave アニメーションで異なる間隔やタイミング関数を利用することができます */
+.itempanel-enter-active {
+  transition: all .3s ease;
+}
+.itempanel-leave-active {
+  transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.itempanel-enter, .itempanel-leave-to {
+  transform: translateX(10px);
+  opacity: 0;
 }
 </style>

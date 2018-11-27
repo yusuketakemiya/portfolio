@@ -1,14 +1,8 @@
+// 非同期処理
 export default {
-  getMainMenue ({ commit }) {
-    commit('getMainMenue', {
-    })
+  openMenueItem ({ commit }, id) {
+    commit('openMenueItem', id)
   }
-  // addTodo ({ commit }, text) {
-  //   commit('addTodo', {
-  //     text,
-  //     done: false
-  //   })
-  // },
 
   // removeTodo ({ commit }, todo) {
   //   commit('removeTodo', todo)

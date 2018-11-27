@@ -5,10 +5,10 @@
 //   window.localStorage.clear()
 // }
 
-export const mutations = {
-  // addTodo (state, todo) {
-  //   state.todos.push(todo)
-  // },
+export default {
+  openMenueItem (state, id) {
+    state.openMenueItem.id = id
+  }
   // removeTodo (state, todo) {
   //   state.todos.splice(state.todos.indexOf(todo), 1)
   // },
