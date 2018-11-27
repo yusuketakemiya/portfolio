@@ -1,5 +1,6 @@
 <template>
   <div class="SkillPanelDown">
+    <user-icon id="user-icon" />
   </div>
 </template>
 
@@ -22,5 +23,10 @@ export default {
   background-size:cover;
   width: 100%;
   height: 300px;
+}
+#user-icon {
+  position: absolute;
+  top: 25px;
+  left: 35px;
 }
 </style>

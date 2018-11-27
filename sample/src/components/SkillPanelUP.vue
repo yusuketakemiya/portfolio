@@ -1,8 +1,6 @@
 <template>
   <div class="SkillPanelUP">
-    <!-- <skill-icon class="item" v-for="(item, idx) in menueitems" :data-index="idx"
-      :key="item.id"
-      :item="item" /> -->
+    <skill-panelname id="name" />
     <skill-icon id="icon-0" />
     <skill-icon id="icon-1" />
     <skill-icon id="icon-2" />
@@ -40,6 +38,9 @@ export default {
   position: absolute;
   top: 139px;
   left: 173px;
+}
+#name {
+  text-align: center;
 }
 #icon-1 {
   position: absolute;

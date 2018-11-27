@@ -9,8 +9,10 @@ import SAOLikeMenue from './components/SAOLikeMenue'
 import ArrowBox from './components/ArrowBox'
 import SkillPanel from './components/SkillPanel'
 import SkillPanelUP from './components/SkillPanelUP'
+import SkillPanelName from './components/SkillPanelName'
 import SkillPanelDown from './components/SkillPanelDown'
 import SkillIcon from './components/SkillIcon'
+import UserIcon from './components/UserIcon'
 
 Vue.config.productionTip = false
 
@@ -23,8 +25,10 @@ Vue.component('sao-menue', SAOLikeMenue)
 Vue.component('arrow-box', ArrowBox)
 Vue.component('skill-panel', SkillPanel)
 Vue.component('skill-panelup', SkillPanelUP)
+Vue.component('skill-panelname', SkillPanelName)
 Vue.component('skill-paneldown', SkillPanelDown)
 Vue.component('skill-icon', SkillIcon)
+Vue.component('user-icon', UserIcon)
 
 /* eslint-disable no-new */
 new Vue({
