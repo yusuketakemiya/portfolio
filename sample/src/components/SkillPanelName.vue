@@ -5,10 +5,12 @@
 </template>
 
 <script>
+import store from '../store'
+
 export default {
   data () {
     return {
-      username: 'tomosuke'
+      username: store.state.userInfo.name
     }
   }
 }

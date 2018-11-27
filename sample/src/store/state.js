@@ -25,5 +25,8 @@ export default {
   },
   openMenueItem: {
     id: -1
+  },
+  userInfo: {
+    name: 'tomosuke'
   }
 }
