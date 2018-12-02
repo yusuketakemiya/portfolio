@@ -28,5 +28,17 @@ export default {
   },
   userInfo: {
     name: 'tomosuke'
-  }
+  },
+  skills: [
+    {
+      name: 'python',
+      icon: require('../assets/skillicons/python.png'),
+      description: 'pythonやってます。'
+    },
+    {
+      name: 'ruby',
+      icon: require('../assets/skillicons/ruby.jpg'),
+      description: 'rubyやってます。'
+    }
+  ]
 }
