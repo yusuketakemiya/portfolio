@@ -8,6 +8,9 @@
 export default {
   openMenueItem (state, id) {
     state.openMenueItem.id = id
+  },
+  skillSelect (state, skill) {
+    state.selectSkill = skill
   }
   // removeTodo (state, todo) {
   //   state.todos.splice(state.todos.indexOf(todo), 1)

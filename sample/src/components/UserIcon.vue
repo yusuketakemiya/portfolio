@@ -1,5 +1,5 @@
 <template>
-  <div class="UserIcon">
+  <div class="UserIcon"  v-bind:style="{ 'background-image': 'url(' + image + ')' }">
   </div>
 </template>
 
@@ -10,7 +10,7 @@ export default {
     }
   },
   props: {
-    item: { }
+    image: { }
   }
 }
 </script>

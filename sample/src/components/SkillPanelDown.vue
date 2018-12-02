@@ -1,22 +1,35 @@
 <template>
   <div class="SkillPanelDown">
-    <user-icon id="user-icon" />
+    <user-icon id="user-icon" :image="select.icon" />
+    <p>{{ select.description }}</p>
   </div>
 </template>
 
 <script>
+import store from '../store'
+
 export default {
   data () {
     return {
     }
   },
-  props: {
-    items: {}
+  computed: {
+    select: function () { return store.state.selectSkill }
   }
 }
 </script>
 
 <style scoped>
+@font-face {
+  font-family: "SAO UI TT";
+  src: url("../assets/font/SAOUITT-Regular.ttf") format("truetype");
+}
+p {
+  font-family: "SAO UI TT";
+  position: absolute;
+  top: 65px;
+  left: 55px;
+}
 .SkillPanelDown {
   background-image: url("../assets/parts/skillpanel_ander-none.png");
   background-size:contain;

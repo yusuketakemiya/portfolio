@@ -1,16 +1,24 @@
 <template>
-  <div class="SkillIcon">
+  <div class="SkillIcon" v-bind:style="{ 'background-image': 'url(' + skill.icon + ')' }"  @click="imageClick">
   </div>
 </template>
 
 <script>
+import store from '../store'
+
 export default {
   data () {
     return {
     }
   },
   props: {
-    item: { }
+    skill: { }
+  },
+  methods: {
+    imageClick: function () {
+      if (this.skill.isNone) { return }
+      store.commit('skillSelect', this.skill)
+    }
   }
 }
 </script>
