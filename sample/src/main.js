@@ -13,6 +13,8 @@ import SkillPanelName from './components/SkillPanelName'
 import SkillPanelDown from './components/SkillPanelDown'
 import SkillIcon from './components/SkillIcon'
 import UserIcon from './components/UserIcon'
+import HistoryPanel from './components/HistoryPanel'
+import NodeItem from './components/NodeItem'
 
 Vue.config.productionTip = false
 
@@ -29,6 +31,8 @@ Vue.component('skill-panelname', SkillPanelName)
 Vue.component('skill-paneldown', SkillPanelDown)
 Vue.component('skill-icon', SkillIcon)
 Vue.component('user-icon', UserIcon)
+Vue.component('history-panel', HistoryPanel)
+Vue.component('node-item', NodeItem)
 
 /* eslint-disable no-new */
 new Vue({

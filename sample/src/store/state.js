@@ -37,7 +37,7 @@ export default {
     },
     {
       name: 'ruby',
-      icon: require('../assets/skillicons/ruby.jpg'),
+      icon: require('../assets/skillicons/ruby.png'),
       description: 'rubyやってます。'
     },
     {
@@ -96,5 +96,35 @@ export default {
       description: ''
     }
   ],
-  selectSkill: {}
+  selectSkill: {},
+  histories: {
+    items: [
+      {
+        id: 1,
+        title: 'aa',
+        description: 'aaa'
+      },
+      {
+        id: 2,
+        title: 'bb',
+        description: 'bbb'
+      },
+      {
+        id: 3,
+        title: 'cc',
+        description: 'ccc'
+      },
+      {
+        id: 4,
+        title: 'dd',
+        description: 'ddd'
+      },
+      {
+        id: 5,
+        title: 'ee',
+        description: 'eee'
+      }
+    ]
+  },
+  selectItem: {}
 }

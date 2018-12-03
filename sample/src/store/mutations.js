@@ -11,6 +11,9 @@ export default {
   },
   skillSelect (state, skill) {
     state.selectSkill = skill
+  },
+  nodeSelect (state, item) {
+    state.selectItem = item
   }
   // removeTodo (state, todo) {
   //   state.todos.splice(state.todos.indexOf(todo), 1)

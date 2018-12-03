@@ -10,6 +10,7 @@
     </transition-group>
     <transition name="itempanel" tag="ul" class="wrapper" appear>
       <skill-panel v-if="isSkillView" />
+      <history-panel v-if="isHistoryView" />
     </transition>
     <vue-touch id="touch_area"
         v-on:swipedown="onSwipeDown"
@@ -47,7 +48,8 @@ export default {
     }
   },
   computed: {
-    isSkillView: function () { return store.state.openMenueItem.id === 1 }
+    isSkillView: function () { return store.state.openMenueItem.id === 1 },
+    isHistoryView: function () { return store.state.openMenueItem.id === 2 }
   }
 }
 </script>
