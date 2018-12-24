@@ -42,4 +42,7 @@ p {
   width: 100px;
   text-align: center;
 }
+.blur>* {
+  filter: blur(2px);
+}
 </style>

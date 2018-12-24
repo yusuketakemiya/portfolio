@@ -2,6 +2,7 @@
   <div class="HistoryPanel">
     <div id="line"/>
     <div id="container">
+      <div id="blurUp"/>
       <transition-group name="mainmenue" class="wrapper" appear>
           <node-item class="item" v-for="(item, idx) in items" :data-index="idx"
             :key="item.id"
@@ -31,6 +32,14 @@ export default {
 <style scoped>
 @import "./style/swipe.css";
 @import "./style/animate.css";
+#blurUp {
+  /* filter: blur(6px); */
+  z-index: 1;
+  position: absolute;
+  height: 10px;
+  width: 200px;
+  background: linear-gradient(rgba(255,0,0,0), whitesmoke);
+}
 .HistoryPanel {
   display: inline-block;
   text-align: left;
